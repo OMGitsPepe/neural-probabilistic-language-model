@@ -1,0 +1,8 @@
+{
+  "train_ppl": 174.77956463544533,
+  "test_ppl": 173.84477170271404,
+  "tokenizer": "word",
+  "vocab_size_or_merges": 20004,
+  "context_size": 3,
+  "train_time_sec": null
+}

@@ -1,0 +1,13 @@
+# tiny.yaml: For fast, reproducible CPU runs.
+seed: 42
+tokenizer_path: "artifacts/brown_word_vocab.json"
+context_size: 3
+embedding_dim: 64
+hidden_dim: 128
+optimizer: "adam"
+lr: 0.001
+batch_size: 512
+max_steps: 5000
+eval_every: 500
+clip_grad_norm: 1.0
+device: "auto"
