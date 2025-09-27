@@ -18,7 +18,7 @@ First, clone the repository and install the required Python packages using the p
 ```commandline
 git clone https://github.com/OMGitsPepe/neural-probabilistic-language-model.git
 
-cd nplm_project
+cd neural-probabilistic-language-model
 
 pip install -r requirements.txt
 ```
@@ -52,19 +52,29 @@ python -m nplm.build_word_vocab --jsonl_dir data/brown_jsonl/train --output_path
 
 Train the model using the `tiny.yaml` configuration. This configuration is designed to run quickly on a CPU.
 
+For tiny:
 ```commandline
 python -m nplm.train --config configs/tiny.yaml --data_dir data/brown_jsonl --save_dir runs/brown_tiny
+```
+
+For medium:
+```commandline
+python -m nplm.train --config configs/medium.yaml --data_dir data/brown_jsonl --save_dir runs/brown_medium    
 ```
 
 ### 6. Evaluate Model
 
 Finally, evaluate the best performing checkpoint on the test set to get the final perplexity score.
 
+For tiny:
 ```commandline
 python -m nplm.evaluate --checkpoint runs/brown_tiny/best.pt --data_dir data/brown_jsonl --out_json results/metrics.json
 ```
 
-After running this command, the final metrics will be saved in results/metrics.json. The expected should be approximately **173.88**.
+For medium:
+```commandline
+python -m nplm.evaluate --checkpoint runs/brown_medium/best.pt --data_dir data/brown_jsonl --out_json results/metrics_medium.json
+```
 
 ## Hardware and Usage Notes
 

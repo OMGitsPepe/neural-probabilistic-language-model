@@ -2,3 +2,6 @@ torch
 pyyaml
 nltk
 tqdm
+transformers
+datasets
+numpy
